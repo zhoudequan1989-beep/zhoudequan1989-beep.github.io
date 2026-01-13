@@ -1,8 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head><title>我的个人站</title></head>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人工具箱</title>
+    <style>
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        .container { max-width: 800px; width: 100%; }
+        header { text-align: center; margin-bottom: 30px; }
+        .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h2 { color: #1a73e8; margin-top: 0; }
+        textarea { width: 100%; height: 120px; border: 1px solid #ddd; border-radius: 8px; padding: 10px; box-sizing: border-box; font-size: 16px; }
+        .btn { background: #1a73e8; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+        .btn:hover { background: #1557b0; }
+        #result { margin-top: 15px; padding: 10px; background: #e8f0fe; border-radius: 6px; min-height: 20px; word-break: break-all; }
+    </style>
+</head>
 <body>
-    <h1>欢迎来到我的小工具主页！</h1>
-    <p>这是一个运行在 GitHub Pages 上的网站。</p>
+    <div class="container">
+        <header>
+            <h1>🛠 我的私房工具箱</h1>
+            <p>基于 GitHub Pages 自动运行</p>
+        </header>
+
+        <div class="card">
+            <h2>🔠 文本大小写转换</h2>
+            <textarea id="textInput" placeholder="请输入要处理的文字..."></textarea>
+            <button class="btn" onclick="upperCase()">转为大写</button>
+            <button class="btn" onclick="lowerCase()">转为小写</button>
+            <div id="result">处理结果将显示在这里...</div>
+        </div>
+
+        </div>
+
+    <script>
+        const input = document.getElementById('textInput');
+        const res = document.getElementById('result');
+
+        function upperCase() {
+            res.innerText = input.value.toUpperCase();
+        }
+
+        function lowerCase() {
+            res.innerText = input.value.toLowerCase();
+        }
+    </script>
 </body>
 </html>
